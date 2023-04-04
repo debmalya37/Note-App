@@ -5,6 +5,9 @@ closeIcon = popupBox.querySelector("header i"),
 titleTag = popupBox.querySelector("input"),
 descTag = popupBox.querySelector("textarea"),
 addBtn = popupBox.querySelector("button");
+const searchbtn = document.querySelector("[data-search]");
+const searchText = document.getElementById('searchInput');
+
 
 const months = ["January", "February", "March", "April", "May", "June", "July",
               "August", "September", "October", "November", "December"];
@@ -18,6 +21,30 @@ addBox.addEventListener("click", () => {
     document.querySelector("body").style.overflow = "hidden";
     if(window.innerWidth > 660) titleTag.focus();
 });
+
+searchText.addEventListener("input", function(){
+    let inputVal = searchText.value;
+    let noteCards = document.querySelectorAll(".note");
+    
+    Array.from(noteCards).forEach(function(element){
+        let cardTxt = element.querySelectorAll("p","span")[0,0].textContent;
+        if(cardTxt.includes(inputVal)){
+            element.style.display = "block";
+            
+        }
+        else {
+            element.style.display = "none";
+        }
+        // console.log(cardTxt);
+        // console.log("search input entered", inputVal);
+    })
+
+    
+});
+
+// const mySearchInput = () =>{
+//     let filter = document.getElementById('searchInput').value.toUpperCase;
+// }
 
 closeIcon.addEventListener("click", () => {
     isUpdate = false;

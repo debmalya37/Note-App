@@ -42,6 +42,19 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="dailyInspiration.html"
+                >Daily Inspiration
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="account.html"
+                >Account</a
+              >
+            </li>
           </ul>
           <form class="d-flex">
             <input
@@ -49,8 +62,9 @@
               type="search"
               placeholder="Search"
               aria-label="Search"
+              id="searchInput"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success" type="submit" data-search>
               Search
             </button>
           </form>
@@ -58,6 +72,7 @@
       </div>
     </nav>
     <!-- end of navbar -->
+    <!-- <input type="image" src="..." alt="Image" /> -->
     <div class="popup-box">
       <div class="popup">
         <div class="content">
@@ -70,7 +85,7 @@
               <label>Title</label>
               <input
                 type="text"
-                spellcheck="false"
+                spellcheck="true"
                 placeholder="Topic of Your Journal"
                 aria-required="true"
               />
